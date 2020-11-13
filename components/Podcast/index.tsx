@@ -2,13 +2,14 @@ import React from 'react';
 import data from 'content/podcasts.json';
 import { Content, ContentWrapper, CoverImage, CoverImageWrapper, Section } from 'components/styled';
 
+const AnyCoverImage = CoverImage as any;
 const Podcasts = () => {
   return (
     <>
       {data.map(({ theme, coverImage, name, host, about, featuredEpisode }) => (
         <Section {...theme} key={name}>
           <CoverImageWrapper>
-            <CoverImage {...coverImage} layout="fill" />
+            <AnyCoverImage {...coverImage} layout="fill" />
           </CoverImageWrapper>
           <ContentWrapper>
             <Content>
