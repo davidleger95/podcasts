@@ -36,5 +36,24 @@
       "id": "0WVyQZct3FL3gsFGoaA2SE",
       "about": ""
     }
+  },
+  {
+    "name": "The Anthropocene Reviewed",
+    "host": "John Green",
+    "artwork": "/anthropocene-reviewed.png",
+    "coverImage": {
+      "src": "/anthropocene-reviewed-cover.jpg",
+      "alt": "John Green"
+    },
+    "theme": {
+      "primaryColor": "#16194A",
+      "accentColor": "#F426AC",
+      "textColor": "#FFFFFF"
+    },
+    "about": "<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p><p>Maecenas faucibus mollis interdum. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean lacinia bibendum nulla sed consectetur. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p><p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>",
+    "featuredEpisode": {
+      "id": "1MD4QeoLUvvv2a093NuhOn",
+      "about": ""
+    }
   }
 ]
