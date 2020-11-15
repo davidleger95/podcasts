@@ -80,7 +80,7 @@ export const CoverImage: typeof Image = styled(Image)`
 
 export const Artwork: typeof Image = styled(Image)`
   display: block;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
 `;
 
 export const ArtworkWrapper = styled.div`
