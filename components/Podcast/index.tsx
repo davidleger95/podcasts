@@ -1,5 +1,5 @@
 import React from 'react';
-import data from 'content/podcasts.json';
+import data from 'content/podcasts.yml';
 import {
   Artwork,
   ArtworkWrapper,
@@ -12,17 +12,18 @@ import {
 } from 'components/styled';
 import Wave from 'assets/wave.svg';
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 
-const StyledWave = styled(Wave)<{ color: string }>`
+const StyledWave = styled(Wave)<{ primaryColor: string; accentColor: string }>`
   color: ${(p) => p.primaryColor};
   width: 100%;
   z-index: 1000;
-  transform: translateY(calc(-100% + 1px - 5vw));
+  transform: translateY(calc(-100% + 5px - 5vw));
   margin-top: 5vw;
   margin-bottom: -12vw;
 
   @media (max-width: 600px) {
-    transform: translateY(calc(-100% + 1px - 5vw)) scaleY(3);
+    transform: translateY(calc(-100% + 5px - 5vw)) scaleY(2);
     transform-origin: bottom;
   }
 
@@ -55,6 +56,7 @@ const StyledWave = styled(Wave)<{ color: string }>`
     &:nth-child(2) {
       animation-delay: -4s;
       animation-duration: 9s;
+      color: ${(p) => p.accentColor};
     }
   }
 `;
@@ -68,7 +70,7 @@ const Podcasts = () => {
             <CoverImage {...coverImage} layout="fill" />
           </CoverImageWrapper>
           <ContentWrapper>
-            <StyledWave color={theme.primaryColor} />
+            <StyledWave {...theme} />
             <Content>
               <SectionHeader>
                 <ArtworkWrapper>
@@ -77,7 +79,7 @@ const Podcasts = () => {
                 <h2>{name}</h2>
                 <h3>{host}</h3>
               </SectionHeader>
-              <div dangerouslySetInnerHTML={{ __html: about }} />
+              <ReactMarkdown children={about}></ReactMarkdown>
               <iframe
                 src={`https://open.spotify.com/embed-podcast/episode/${featuredEpisode.id}`}
                 width="100%"
