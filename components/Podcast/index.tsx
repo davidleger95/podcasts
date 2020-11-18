@@ -15,15 +15,14 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
 const StyledWave = styled(Wave)<{ primaryColor: string; accentColor: string }>`
-  color: ${(p) => p.primaryColor};
+  --primary: ${(p) => p.primaryColor};
+  --accent: ${(p) => p.accentColor};
+  position: absolute;
   width: 100%;
-  z-index: 1000;
-  transform: translateY(calc(-100% + 5px - 5vw));
-  margin-top: 5vw;
-  margin-bottom: -12vw;
+  transform: translateY(calc(-100% + 1px));
 
   @media (max-width: 600px) {
-    transform: translateY(calc(-100% + 5px - 5vw)) scaleY(2);
+    transform: translateY(calc(-100% + 1px)) scaleY(2);
     transform-origin: bottom;
   }
 
@@ -56,7 +55,6 @@ const StyledWave = styled(Wave)<{ primaryColor: string; accentColor: string }>`
     &:nth-child(2) {
       animation-delay: -4s;
       animation-duration: 9s;
-      color: ${(p) => p.accentColor};
     }
   }
 `;

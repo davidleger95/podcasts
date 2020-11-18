@@ -86,7 +86,7 @@ export const Artwork: typeof Image = styled(Image)`
 export const ArtworkWrapper = styled.div`
   margin: auto;
   width: clamp(8rem, 30vw, 12rem);
-  margin-top: calc(-150px - 5vw);
+  margin-top: calc(-120px - 5vw);
   transform: rotateZ(7deg);
   margin-bottom: 3rem;
   filter: drop-shadow(0 0 1rem #0008);
