@@ -22,7 +22,7 @@ const StyledWave = styled(Wave)<{ primaryColor: string; accentColor: string }>`
   transform: translateY(calc(-100% + 1px));
 
   @media (max-width: 600px) {
-    transform: translateY(calc(-100% + 1px)) scaleY(2);
+    transform: translateY(calc(-100% + 5px)) scaleY(2);
     transform-origin: bottom;
   }
 
