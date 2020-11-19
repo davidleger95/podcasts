@@ -13,6 +13,9 @@ import {
 import Wave from 'assets/wave.svg';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
+import slugify from 'utils/slugify';
+import SpotifyEmbed from 'components/SpotifyEmbed';
+import EpisodeReccomendation from 'components/EpisodeReccomendation';
 
 const StyledWave = styled(Wave)<{ primaryColor: string; accentColor: string }>`
   --primary: ${(p) => p.primaryColor};
@@ -63,7 +66,7 @@ const Podcasts = () => {
   return (
     <>
       {data.map(({ theme, coverImage, artwork, name, host, about, featuredEpisode }) => (
-        <Section {...theme} key={name}>
+        <Section {...theme} key={name} id={slugify(name)}>
           <CoverImageWrapper>
             <CoverImage {...coverImage} layout="fill" />
           </CoverImageWrapper>
@@ -75,14 +78,12 @@ const Podcasts = () => {
                   <Artwork src={artwork} width={200} height={200} layout="responsive" />
                 </ArtworkWrapper>
                 <h2>{name}</h2>
-                <h3>{host}</h3>
+                <h3>
+                  <small>Hosted by</small> {host}
+                </h3>
               </SectionHeader>
               <ReactMarkdown children={about}></ReactMarkdown>
-              <iframe
-                src={`https://open.spotify.com/embed-podcast/episode/${featuredEpisode.id}`}
-                width="100%"
-                frameBorder="0"
-                allow="encrypted-media"></iframe>
+              <EpisodeReccomendation {...featuredEpisode} />
             </Content>
           </ContentWrapper>
         </Section>
