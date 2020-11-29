@@ -28,8 +28,8 @@ const Content = styled.div`
 const Button = styled.button`
   border-radius: 50%;
   border: none;
-  height: 3em;
-  width: 3em;
+  height: 3.5em;
+  width: 3.5em;
   padding: 0.25em;
   position: relative;
   background: #fff;
