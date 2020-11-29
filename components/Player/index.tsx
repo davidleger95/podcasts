@@ -28,10 +28,11 @@ const Content = styled.div`
 const Button = styled.button`
   border-radius: 50%;
   border: none;
-  height: 2.5em;
-  width: 2.5em;
+  height: 3em;
+  width: 3em;
   padding: 0.25em;
   position: relative;
+  background: #fff;
   display: block;
   --icon-color: #873dff;
 
@@ -64,12 +65,8 @@ const Button = styled.button`
         opacity: 1;
       }
 
-      80% {
-        opacity: 0;
-      }
-
       100% {
-        transform: scale(2);
+        transform: scale(1.5);
         opacity: 0;
       }
     }
