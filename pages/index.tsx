@@ -6,6 +6,7 @@ import { motion, useTransform, useViewportScroll, Variants } from 'framer-motion
 import styles from '../styles/Home.module.css';
 import useWindowSize from 'hooks/useWindowSize';
 import Podcasts from 'components/Podcast';
+import Player from 'components/Player';
 
 const Header = styled.header`
   display: grid;
@@ -133,7 +134,8 @@ const CoverArt: FC<any> = ({ delay = 0, dragConstraints, ...props }) => (
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.9 }}
     variants={item}>
-    <motion.div
+    {/* TODO move to keyframes */}
+    {/* <motion.div
       animate={{
         rotate: [5 + delay, -5 + delay, 5 + delay],
         x: [5, -5, 5],
@@ -144,9 +146,10 @@ const CoverArt: FC<any> = ({ delay = 0, dragConstraints, ...props }) => (
         loop: Infinity,
         delay: delay * 2,
         type: 'keyframes'
-      }}>
-      <Image layout="responsive" height={140} width={140} {...props} />
-    </motion.div>
+      }}
+      > */}
+    <Image height={140} width={140} {...props} />
+    {/* </motion.div> */}
   </CoverArtWrapper>
 );
 
@@ -170,11 +173,21 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Some Podcasts I Listen To</title>
+        {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap"
+          rel="stylesheet"></link> */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+          rel="stylesheet"></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&display=swap"
+          rel="stylesheet"></link>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header ref={constraintRef}>
@@ -215,6 +228,7 @@ export default function Home() {
         </Author>
       </Header>
       <Podcasts />
+      <Player audio={{ title: 'Riverside', src: '/agnes-obel--riverside.mp3' }} />
     </div>
   );
 }

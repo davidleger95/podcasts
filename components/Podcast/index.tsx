@@ -14,7 +14,6 @@ import Wave from 'assets/wave.svg';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import slugify from 'utils/slugify';
-import SpotifyEmbed from 'components/SpotifyEmbed';
 import EpisodeReccomendation from 'components/EpisodeReccomendation';
 
 const StyledWave = styled(Wave)<{ primaryColor: string; accentColor: string }>`
@@ -75,7 +74,7 @@ const Podcasts = () => {
             <Content>
               <SectionHeader>
                 <ArtworkWrapper>
-                  <Artwork src={artwork} width={200} height={200} layout="responsive" />
+                  <Artwork src={artwork} width={200} height={200} />
                 </ArtworkWrapper>
                 <h2>{name}</h2>
                 <h3>

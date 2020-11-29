@@ -54,6 +54,7 @@ export const Content = styled.div`
 
     :first-of-type::first-letter {
       font-family: 'Bebas Neue', sans-serif;
+      /* font-family: 'Bangers', cursive; */
       font-size: 5.1em;
       display: block;
       float: left;
@@ -78,7 +79,6 @@ export const Content = styled.div`
     display: grid;
     grid-auto-flow: column;
     align-items: stretch;
-    text-shadow: 0.1em 0em 0em #0008;
 
     @media (max-width: 1000px) {
       margin-right: -10%;
