@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React, { FC, useCallback, useEffect, useState } from 'react';
 import { useMemo } from 'react';
 import styled from 'styled-components';
@@ -19,7 +20,7 @@ const Content = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 
   padding: 1rem;
 `;
@@ -87,7 +88,7 @@ const TimeDisplay = styled.time`
 
   .total {
     opacity: 0.5;
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
   }
 `;
 
@@ -163,14 +164,14 @@ const PlayPauseButton: FC<PlayPauseButtonProps> = ({ audio, playState }) => {
       const animations = document.getElementsByClassName('play-animation') as HTMLCollectionOf<
         SVGAnimateElement
       >;
-      animations[0].beginElement();
-      animations[1].beginElement();
+      (animations[0] as any).beginElement();
+      (animations[1] as any).beginElement();
     } else if (playState === PlayState.Paused || playState === PlayState.Ended) {
       const animations = document.getElementsByClassName('pause-animation') as HTMLCollectionOf<
         SVGAnimateElement
       >;
-      animations[0].beginElement();
-      animations[1].beginElement();
+      (animations[0] as any).beginElement();
+      (animations[1] as any).beginElement();
     }
   }, [playState]);
 
@@ -260,9 +261,7 @@ const Player: FC<PlayerProps> = ({ title, src }) => {
       <Progress value={currentTime?.getTime()} max={duration?.getTime() || 0} />
       <Content>
         <PlayPauseButton playState={playState} audio={audio} />
-        <div>
-          {'title'} - {playState}
-        </div>
+        <div>{title}</div>
         <TimeDisplay>
           {formatTime(currentTime)} <span className="total"> / {formatTime(duration)}</span>
         </TimeDisplay>
@@ -281,7 +280,11 @@ const ClientPlayer: FC<ClientPlayerProps> = ({ audio }) => {
     return null;
   }
 
-  return <Player {...audio} />;
+  return (
+    <AnimatePresence>
+      <Player {...audio} />
+    </AnimatePresence>
+  );
 };
 
 export default ClientPlayer;
