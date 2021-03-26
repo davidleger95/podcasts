@@ -197,7 +197,6 @@ export default function Home() {
       <Header ref={constraintRef}>
         <CoverArtContainer initial="hidden" animate="visible" variants={list} custom={0.25}>
           <CoverArt src="/review-revue.jpeg" dragConstraints={constraintRef} delay={0.5} />
-          <CoverArt src="/reply-all.jpg" dragConstraints={constraintRef} />
           <CoverArt src="/potterless.jpg" dragConstraints={constraintRef} delay={0.25} />
           <CoverArt src="/cautionary-tales.png" dragConstraints={constraintRef} delay={0.75} />
         </CoverArtContainer>
@@ -220,9 +219,8 @@ export default function Home() {
           custom={1}
           style={{ opacity }}>
           <CoverArt src="/anthropocene-reviewed.png" dragConstraints={constraintRef} delay={0.75} />
-          <CoverArt src="/s-town.jpg" dragConstraints={constraintRef} delay={0.25} />
-          <CoverArt src="/how-i-built-this.png" dragConstraints={constraintRef} delay={0.5} />
-          <CoverArt src="/the-last-archive.png" dragConstraints={constraintRef} />
+          <CoverArt src="/99-pi.jpg" dragConstraints={constraintRef} delay={0.25} />
+          <CoverArt src="/reply-all.jpg" dragConstraints={constraintRef} />
         </CoverArtContainer>
         <Author initial="hidden" animate="visible" variants={list} custom={3}>
           <code style={{ fontStyle: 'italic' }}>
