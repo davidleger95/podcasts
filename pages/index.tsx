@@ -6,7 +6,7 @@ import { motion, useTransform, useViewportScroll, Variants } from 'framer-motion
 import styles from '../styles/Home.module.css';
 import useWindowSize from 'hooks/useWindowSize';
 import Podcasts from 'components/Podcast';
-import Player from 'components/Player';
+// import Player from 'components/Player';
 
 const Header = styled.header`
   display: grid;
@@ -232,7 +232,7 @@ export default function Home() {
         </Author>
       </Header>
       <Podcasts />
-      <Player audio={{ title: 'Riverside', src: '/agnes-obel--riverside.mp3' }} />
+      {/* <Player audio={{ title: 'Riverside', src: '/agnes-obel--riverside.mp3' }} /> */}
     </div>
   );
 }
