@@ -219,7 +219,7 @@ export default function Home() {
           custom={1}
           style={{ opacity }}>
           <CoverArt src="/anthropocene-reviewed.png" dragConstraints={constraintRef} delay={0.75} />
-          <CoverArt src="/99-pi.jpg" dragConstraints={constraintRef} delay={0.25} />
+          <CoverArt src="/99-pi.png" dragConstraints={constraintRef} delay={0.25} />
           <CoverArt src="/reply-all.jpg" dragConstraints={constraintRef} />
         </CoverArtContainer>
         <Author initial="hidden" animate="visible" variants={list} custom={3}>
